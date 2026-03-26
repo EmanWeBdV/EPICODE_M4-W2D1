@@ -11,11 +11,13 @@ const getPhotos = async () => {
             }
         })
         const data = await rawData.json()
-        //data.forEach(el => {
-        //   const photo = document.createElement("img")
-        //   photo.setAttribute("src", "el.photos.url")
-        //});
-        return data
+        const dataPhotos = data.photos
+        console.log(dataPhotos)
+        data.forEach(el => {
+           const photo = document.createElement("img")
+           photo.setAttribute("src", dataPhotos[el].url)
+           document.body.appendChild("photo")
+        });
     }
     catch(error){
         console.log(error)
@@ -23,4 +25,3 @@ const getPhotos = async () => {
 }
 
 getPhotos()
-    .then(res => console.log(res))
