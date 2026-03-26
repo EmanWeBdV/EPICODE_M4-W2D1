@@ -1,0 +1,9 @@
+.imgBox {
+  width: 30% !important;
+  height: auto;
+  overflow: hidden;
+}
+
+.imgBox img {
+  object-fit: cover;
+}
